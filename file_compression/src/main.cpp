@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <vector>
 #include <queue>
+#include <fstream>
 #include "../include/Huffman.h"
 using namespace std;
 
@@ -15,8 +16,16 @@ int main()
 
     if (frequencies.empty()) 
     {
-        cout << "Map is empty or file not found!" << '\n';
-        return 1;
+        cout << "File is empty! Creating an empty compressed file." << '\n';
+        ofstream emptyFile("tests/compressed.bin");
+        return 0;
+    }
+
+    if (frequencies.size() == 1)
+    {
+        auto it = frequencies.begin();
+        char dummy = (it->first == '\0') ? '\1' : '\0';
+        frequencies[dummy] = 1;
     }
 
     priority_queue<HuffmanNode*, vector<HuffmanNode*>, CompareNode> minHeap;
@@ -45,5 +54,11 @@ int main()
         }
     }
 
+    string compressedFile = "tests/compressed.bin";
+
+    compressFile(testFile, compressedFile, frequencies, huffmanCodes);
+    decompressFile(compressedFile, "tests/decompressed.txt");
+
+    freeTree(root);
     return 0;
 }

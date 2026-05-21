@@ -31,4 +31,10 @@ HuffmanNode* buildHuffmanTree(std::priority_queue<HuffmanNode*, std::vector<Huff
 
 void generateCodes(HuffmanNode* root, std::string code, std::unordered_map<char, std::string>& huffmanCodes);
 
+void compressFile(const std::string& inputPath, const std::string& outputPath, const std::unordered_map<char, int>& frequencies, std::unordered_map<char, std::string>& huffmanCodes);
+
+void decompressFile(const std::string& inputPath, const std::string& outputPath);
+
+void freeTree(HuffmanNode* root);
+
 #endif
