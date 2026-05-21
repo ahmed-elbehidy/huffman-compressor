@@ -3,6 +3,8 @@
 
 #include <unordered_map>
 #include <string>
+#include <queue>
+#include <vector>
 
 struct HuffmanNode 
 {
@@ -24,5 +26,9 @@ struct CompareNode
 };
 
 std::unordered_map<char, int> calculateFrequency(const std::string& filePath);
+
+HuffmanNode* buildHuffmanTree(std::priority_queue<HuffmanNode*, std::vector<HuffmanNode*>, CompareNode>& minHeap);
+
+void generateCodes(HuffmanNode* root, std::string code, std::unordered_map<char, std::string>& huffmanCodes);
 
 #endif

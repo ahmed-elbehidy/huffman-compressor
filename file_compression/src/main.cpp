@@ -1,11 +1,8 @@
 #include <iostream>
-#include "../include/Huffman.h"
 #include <algorithm>
 #include <vector>
-#include <string>
-#include <unordered_map>
 #include <queue>
-#include <fstream>
+#include "../include/Huffman.h"
 using namespace std;
 
 int main()
@@ -30,22 +27,22 @@ int main()
         minHeap.push(newNode);
     }
 
-    cout << "--- Min-Heap Contents (Sorted by lowest frequency) ---" << '\n';
+    HuffmanNode* root = buildHuffmanTree(minHeap);
 
-    while (!minHeap.empty()) 
+    unordered_map<char, string> huffmanCodes;
+    generateCodes(root, "", huffmanCodes);
+
+    cout << "--- Huffman Codes ---" << '\n';
+    for (auto pair : huffmanCodes)
     {
-        HuffmanNode* topNode = minHeap.top();
-
-        if (topNode->data == '\n')
+        if (pair.first == '\n')
         {
-            cout << "Character: '\\n' | Frequency: " << topNode->frequency << '\n';
+            cout << "Character: '\\n' | Code: " << pair.second << '\n';
         }
         else
         {
-            cout << "Character: '" << topNode->data << "' | Frequency: " << topNode->frequency << '\n';
+            cout << "Character: '" << pair.first << "' | Code: " << pair.second << '\n';
         }
-
-        minHeap.pop();
     }
 
     return 0;
