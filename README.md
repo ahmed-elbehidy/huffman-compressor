@@ -1,5 +1,3 @@
-# file_compression
-
 # Huffman File Compression Tool
 
 A command-line file compression and decompression utility implemented in C++ using the **Huffman Coding** algorithm. 
