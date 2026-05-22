@@ -27,7 +27,7 @@ This tool performs lossless data compression by assigning variable-length binary
  ┃  ┗  Huffman.h        # Function declarations and structs
  ┣  src
  ┃  ┗  Huffman.cpp      # Core compression/decompression logic
-    ┗  main.cpp         # # CLI implementation
+    ┗  main.cpp         # CLI implementation
  ┣  tests
  ┃  ┗  test.txt         # Sample files for testing
  ┣           
