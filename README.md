@@ -20,17 +20,18 @@ This tool performs lossless data compression by assigning variable-length binary
   - Data Serialization (Writing Hash Maps and Tree Headers to binary files)
   - Memory Management (Tree traversal and deletion)
 
-## 📁 Project Structure
+## Project Structure
 ```text
-📦 Huffman-File-Compressor
- ┣ 📂 include
- ┃ ┗ 📜 Huffman.h        # Function declarations and structs
- ┣ 📂 src
- ┃ ┗ 📜 Huffman.cpp      # Core compression/decompression logic
- ┣ 📂 tests
- ┃ ┗ 📜 test.txt         # Sample files for testing
- ┣ 📜 main.cpp           # CLI implementation
- ┗ 📜 README.md          # Project documentation
+ Huffman-File-Compressor
+ ┣  include
+ ┃  ┗  Huffman.h        # Function declarations and structs
+ ┣  src
+ ┃  ┗  Huffman.cpp      # Core compression/decompression logic
+    ┗  main.cpp         # # CLI implementation
+ ┣  tests
+ ┃  ┗  test.txt         # Sample files for testing
+ ┣           
+ ┗  README.md          # Project documentation
 ```
 ### Getting Started
 ## Compilation
