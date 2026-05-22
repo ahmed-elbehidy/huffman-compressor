@@ -22,7 +22,7 @@ This tool performs lossless data compression by assigning variable-length binary
 
 ## Project Structure
 ```text
- Huffman-File-Compressor
+ huffman-compressor
  ┣  include
  ┃  ┗  Huffman.h        # Function declarations and structs
  ┣  src
